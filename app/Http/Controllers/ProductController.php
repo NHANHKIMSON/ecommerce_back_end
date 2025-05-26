@@ -29,7 +29,7 @@ class ProductController extends Controller implements HasMiddleware
             ->addSelect(['category_name' => ProductCategory::select('name')
                 ->whereColumn('id', 'products.category_id')
             ])
-            ->paginate(8);
+            ->paginate(6);
             
         return response()->json($products);
     }
