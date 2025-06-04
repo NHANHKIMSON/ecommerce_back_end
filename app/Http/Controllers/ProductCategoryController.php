@@ -76,8 +76,8 @@ class ProductCategoryController extends Controller
     public function update(Request $request, ProductCategory $category)
     {
         $validated = $request->validate([
-            'name' => 'sometimes|string|max:255',
-            'photo' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'name' => 'nullable',
+            'photo' => 'nullable'
         ]);
 
         try {

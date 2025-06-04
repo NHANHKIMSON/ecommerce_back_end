@@ -20,16 +20,6 @@ Route::post('/products/{product}', [ProductController::class, 'update'])->name('
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-// Route::post('logout', [AuthController::class, 'logout'])->
-// middleware('auth:sanctum');
-// Route::get('/me', [AuthController::class, 'me']);
-
-
-// Route::apiResource('orders', OrderController::class)->only(['index', 'store', 'show']);
-
-
-// Route::apiResource('orders', OrderController::class)->only(['index', 'store', 'show']);
-// Route::post('/orders/{order}/cancel', [OrderController::class, 'cancel']);
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/orders', [OrderController::class, 'store']);
